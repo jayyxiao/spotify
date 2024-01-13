@@ -16,20 +16,20 @@
 }
 
 .leftrec {
-    text-align:left;
+    color: blue;
 }
 
 .rightrec {
-    text-align:left;
+    color: red;
 }
 
-.reload1 {
+.refresh1 {
     height: 30%;
     margin-top: 6%;
     margin-left: 5%;
 }
 
-.reload2{
+.refresh2{
     height: 30%;
     margin-top: 5.5%;
     margin-left: auto;
