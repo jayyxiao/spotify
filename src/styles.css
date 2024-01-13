@@ -15,6 +15,42 @@
     margin-left: 50%;
 }
 
+.heading{
+    margin-left: 20px;
+}
+
+li {
+    position: absolute;
+    inline-size: 210px;
+    overflow-wrap: break-word;
+}
+
+.list {
+    margin-left: 100px;
+}
+
+.prelist {
+    margin-left: 10px;
+}
+
+.list > li {
+    inline-size: 150px;
+}
+
+.prelist > li {
+    inline-size: 150px;
+}
+
+.intermediate1 {
+    margin-left: 5%;
+}
+
+.intermediate2 {
+    height: 10%;
+    margin-left: 3%;
+    margin-top: 23px;
+}
+
 .rec1 {
     margin-left: 5%;
 }
@@ -28,25 +64,5 @@
 }
 
 .rec4 {
-    margin-left: 19%;
-}
-
-.header1 {
-    margin-left: 14%;
-}
-
-.refresh1 {
-    height: 30%;
-    margin-top: 6%;
-    margin-left: 5%;
-}
-
-li {
-    position: absolute;
-    inline-size: 200px;
-    overflow-wrap: break-word;
-}
-
-.list {
-    margin-left: 110px;
+    margin-left: 17.5%;
 }
