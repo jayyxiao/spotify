@@ -10,3 +10,27 @@
 .right {
     margin-left: 22%;
 }
+
+.topright {
+    margin-left: 50%;
+}
+
+.leftrec {
+    text-align:left;
+}
+
+.rightrec {
+    text-align:left;
+}
+
+.reload1 {
+    height: 30%;
+    margin-top: 6%;
+    margin-left: 5%;
+}
+
+.reload2{
+    height: 30%;
+    margin-top: 5.5%;
+    margin-left: auto;
+}
