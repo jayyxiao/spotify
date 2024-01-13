@@ -3,10 +3,6 @@
     flex-direction: row;
 }
 
-/*.container .bottom {
-    justify-content: center;
-}*/
-
 .left {
     margin-left: 2.5%;
 }
@@ -47,4 +43,10 @@
 
 li {
     position: absolute;
+    inline-size: 200px;
+    overflow-wrap: break-word;
+}
+
+.list {
+    margin-left: 110px;
 }
