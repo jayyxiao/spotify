@@ -3,8 +3,12 @@
     flex-direction: row;
 }
 
+/*.container .bottom {
+    justify-content: center;
+}*/
+
 .left {
-    margin-left: 1%;
+    margin-left: 2.5%;
 }
 
 .right {
@@ -15,21 +19,21 @@
     margin-left: 50%;
 }
 
-.rec1 {
+/*.rec1 {
     margin-left: 5%;
 }
 
 .rec2 {
-    margin-left: 10%;
+    margin-left: 0%;
 }
 
 .rec3 {
-    margin-left: 17%;
+    margin-left: 10%;
 }
 
 .rec4 {
-    margin-left: -2%;
-}
+    margin-left: 5%;
+}*/
 
 .header1 {
     margin-left: 14%;
@@ -39,4 +43,8 @@
     height: 30%;
     margin-top: 6%;
     margin-left: 5%;
+}
+
+ol > li {
+    position: absolute;
 }
