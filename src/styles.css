@@ -19,21 +19,21 @@
     margin-left: 50%;
 }
 
-/*.rec1 {
+.rec1 {
     margin-left: 5%;
 }
 
 .rec2 {
-    margin-left: 0%;
+    margin-left: 16%;
 }
 
 .rec3 {
-    margin-left: 10%;
+    margin-left: 18%;
 }
 
 .rec4 {
-    margin-left: 5%;
-}*/
+    margin-left: 19%;
+}
 
 .header1 {
     margin-left: 14%;
@@ -45,6 +45,6 @@
     margin-left: 5%;
 }
 
-ol > li {
+li {
     position: absolute;
 }
