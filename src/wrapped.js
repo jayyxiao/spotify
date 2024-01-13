@@ -4,6 +4,10 @@ const clientId = "c066a667dc484615ab9ba7c050cf944b";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
+var authorizationToken = "";
+var trackSeed = "";
+var artistSeed = "";
+
 if (!code) {  
     //add login button instead
     redirectToAuthCodeFlow(clientId);
@@ -19,6 +23,9 @@ if (!code) {
     displayArtists(artists);
     displayRecsFromTracks(recs_from_tracks);
     displayRecsFromArtists(recs_from_artists);
+
+    //const element = document.getElementById("intermediate2");
+    //element.addEventListener("click", () => refreshRecs(), false);
 }
 
 async function fetchProfile(token) {
@@ -66,7 +73,7 @@ function displayArtists(artists) {
 }
 
 async function fetchTrackRecs(token, type, seed_object, limit) {
-    //type is artists or tracks
+    //type is artists or tracks. only call this during driver
     let seeds = "";
     for(let i=0; i<5; i++) {
         seeds += seed_object.items[i].id;
@@ -79,6 +86,14 @@ async function fetchTrackRecs(token, type, seed_object, limit) {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
     });
         //target_popularity
+    if(type == "tracks") {
+        authorizationToken = token;
+        trackSeed = seeds;
+    }
+    else {
+        artistSeed = seeds;
+    }
+    
 
         return await result.json();
 }
@@ -98,6 +113,19 @@ function displayRecsFromArtists(trackObject) {
         document.getElementById("a_rec"+(i+1).toString()).innerText = trackObject.tracks[i].name;
         document.getElementById("a_recpic"+(i+1).toString()).children[0].title = trackObject.tracks[i].popularity;
     }
+}
+
+function refreshRecs() {
+    const trackRec = fetch(trackSeed, {
+        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
+    });
+    const artistRec =  fetch(artistSeed, {
+        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
+    });
+
+    displayRecsFromTracks(trackRec);
+    displayRecsFromArtists(artistRec);
+    //return trackRec;
 }
 
 function populateUI(profile) {
@@ -122,6 +150,11 @@ function makeImage(images, name, dimension) {
     if (images[0]) {
         const img = new Image(dimension, dimension);
         img.src = images[0].url;
-        document.getElementById(name).appendChild(img);
+        const element = document.getElementById(name);
+        /*if (element.hasChildNodes()) {
+            element.removeChild(element.childNodes[2]);
+        }*/
+        //the 2 br are children too, the picture should be the third child.
+        element.appendChild(img);
     }
 }
