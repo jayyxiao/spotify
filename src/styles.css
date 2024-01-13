@@ -15,22 +15,28 @@
     margin-left: 50%;
 }
 
-.leftrec {
-    color: blue;
+.rec1 {
+    margin-left: 5%;
 }
 
-.rightrec {
-    color: red;
+.rec2 {
+    margin-left: 10%;
+}
+
+.rec3 {
+    margin-left: 17%;
+}
+
+.rec4 {
+    margin-left: -2%;
+}
+
+.header1 {
+    margin-left: 14%;
 }
 
 .refresh1 {
     height: 30%;
     margin-top: 6%;
     margin-left: 5%;
-}
-
-.refresh2{
-    height: 30%;
-    margin-top: 5.5%;
-    margin-left: auto;
 }
