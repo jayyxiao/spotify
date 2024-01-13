@@ -1,6 +1,7 @@
 import { redirectToAuthCodeFlow, getAccessToken } from "./authorization";
 
-const clientId = "c066a667dc484615ab9ba7c050cf944b";
+//const clientId = "c066a667dc484615ab9ba7c050cf944b";
+const clientId = "c0a6db2f18fd48358b8df6e491d342f6";
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
@@ -24,8 +25,10 @@ if (!code) {
     displayRecsFromTracks(recs_from_tracks);
     displayRecsFromArtists(recs_from_artists);
 
-    //const element = document.getElementById("intermediate2");
-    //element.addEventListener("click", () => refreshRecs(), false);
+    const element = document.getElementById("mybutton");
+    element.addEventListener("click", () => refreshRecs(), false);
+    element.addEventListener("click", () => refreshRecsArtists(), false);
+
 }
 
 async function fetchProfile(token) {
@@ -93,7 +96,6 @@ async function fetchTrackRecs(token, type, seed_object, limit) {
     else {
         artistSeed = seeds;
     }
-    
 
         return await result.json();
 }
@@ -115,17 +117,22 @@ function displayRecsFromArtists(trackObject) {
     }
 }
 
-function refreshRecs() {
-    const trackRec = fetch(trackSeed, {
-        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
-    });
-    const artistRec =  fetch(artistSeed, {
+async function refreshRecs() {
+    const trackRec = await fetch("https://api.spotify.com/v1/recommendations?limit=10&seed_tracks="+trackSeed, {
         method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
     });
 
-    displayRecsFromTracks(trackRec);
-    displayRecsFromArtists(artistRec);
-    //return trackRec;
+    displayRecsFromTracks(await trackRec.json());
+    return trackRec;
+}
+
+async function refreshRecsArtists() {
+    const artistRec =  await fetch("https://api.spotify.com/v1/recommendations?limit=10&seed_artists="+artistSeed, {
+        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
+    });
+
+    displayRecsFromArtists(await artistRec.json());
+    return artistRec;
 }
 
 function populateUI(profile) {
@@ -151,10 +158,12 @@ function makeImage(images, name, dimension) {
         const img = new Image(dimension, dimension);
         img.src = images[0].url;
         const element = document.getElementById(name);
-        /*if (element.hasChildNodes()) {
-            element.removeChild(element.childNodes[2]);
-        }*/
-        //the 2 br are children too, the picture should be the third child.
+        if(element.hasChildNodes()) {
+            if (element.lastChild.hasAttribute("src")) {
+                element.removeChild(element.lastChild);
+            }
+        }
+        //the 2 br are children too, the picture should be the third child, except for first pic
         element.appendChild(img);
     }
 }
