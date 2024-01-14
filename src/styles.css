@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    margin-left: 2.5%;
+}
+
+.right {
+    margin-left: 22%;
+    margin-top: 10px;
+}
+
+.topright {
+    margin-left: 50%;
+}
+
+.heading {
+    margin-left: 20px;
+}
+
+.seemore {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+li {
+    position: absolute;
+    inline-size: 200px;
+    overflow-wrap: break-word;
+}
+
+.list {
+    margin-left: 100px;
+}
+
+.prelist {
+    margin-left: 10px;
+}
+
+.list > li {
+    inline-size: 150px;
+}
+
+.prelist > li {
+    inline-size: 150px;
+}
+
+.listend {
+    margin-left: 80px;
+}
+
+.intermediate1 {
+    margin-left: 4.5%;
+}
+
+.intermediate2 {
+    height: 10%;
+    margin-left: 1.5%;
+    margin-top: 23px;
+}
+
+.rec1 {
+    margin-left: 5%;
+}
+
+.rec2 {
+    margin-left: 14.25%;
+}
+
+.rec3 {
+    margin-left: 15%;
+}
+
+.rec4 {
+    margin-left: 14.6%;
+}
+
+.play {
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 17px;
+}
+  
+.tooltip:after {
+    content: "Tracks are scored 1-100, with 100 being the most popular. Hover over an album cover to see its popularity score";
+    position: absolute;
+    overflow-wrap: break-word;
+    width: 165px;
+
+    top: -30px;
+    right: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.tooltip:hover:after {
+    display: block;
+}
+
+.second:after {
+    content: "Artists are scored 1-100, based on the popularity of their tracks. Hover over an artist's picture to see their popularity score";
+}
+
+html {
+    padding-bottom: 30px;
+}
