@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Spotify Profile</title>
+        
+        <script src="src/wrapped.js" type="module"></script>
+        <link rel="stylesheet" type = "text/css" href="src/styles.css">
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "left">
+                <section id="profile">
+                <h2>Welcome, <span id="displayName"></span></h2>
+                <span id="avatar"></span>
+                </section>
+            </div>
+            <div class = "right">
+                <h1>
+                    Spotify Wrapped 2.0
+                </h1>
+            </div>
+        </div>
+
+        <div class = "container">
+            <h2 class = "heading">Top 5 Tracks</h2>
+            <h4><a href = "tracks.html" target = "_blank" id = "moretracks" class = "seemore">See More</a></h4>
+        </div>
+        <ol>
+        <div class = "container">
+            <div class = "prelist"> 
+                <span id="trackpic1"></span><br>
+                <li><span id="track1"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="trackpic2"></span><br>
+                <li><span id="track2"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="trackpic3"></span><br>
+                <li><span id="track3"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="trackpic4"></span><br>
+                <li><span id="track4"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="trackpic5"></span><br>
+                <li><span id="track5"></span></li>
+            </div>
+            <div class = "listend"> 
+                <h3>Average Popularity: <span id="trackavg"></span></h3>
+            </div>     
+            <span class = "tooltip">&#9432;</span>
+        </div>
+        </ol>
+        <br>
+        
+        <div class = "container">
+            <h2 class = "heading">Top 5 Artists</h2>
+            <h4><a href = "artists.html" target = "_blank" id = "moreartists" class = "seemore">See More</a></h4>
+        </div>
+        <ol>
+        <div class = "container">
+            <div class = "prelist"> 
+                <span id="artistpic1"></span><br>
+                <li><span id="artist1"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="artistpic2"></span><br>
+                <li><span id="artist2"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="artistpic3"></span><br>
+                <li><span id="artist3"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="artistpic4"></span><br>
+                <li><span id="artist4"></span></li>
+            </div>
+            <div class = "list"> 
+                <span id="artistpic5"></span><br>
+                <li><span id="artist5"></span></li>
+            </div>
+            <div class = "listend"> 
+                <h3>Average Popularity: <span id="artistavg"></span></h3>
+            </div>
+            <span class = "tooltip second">&#9432;</span>
+        </div>
+        </ol>
+        <br>
+
+        <div class = "container">
+            <h2 class = "intermediate1">Recommended Tracks</h2>
+            <button class = "intermediate2" id = "mybutton" title = "Don't Spam">Refresh</button>
+        </div>
+
+        <ol>
+        <div class = "container bottom">
+                <div class = "rec1"> 
+                    <span id="t_recpic1"></span>
+                    <li><span id="t_rec1"></span></li><a id = "pt1" class = "play">&#9654;</a><br>
+                    <span id="t_recpic2"><br><br></span>
+                    <li><span id="t_rec2"></span></li><a id = "pt2" class = "play" >&#9654;</a><br>
+                    <span id="t_recpic3"><br><br></span>
+                    <li><span id="t_rec3"></span></li><a id = "pt3" class = "play">&#9654;</a><br>
+                    <span id="t_recpic4"><br><br></span>
+                    <li><span id="t_rec4"></span></li><a id = "pt4" class = "play">&#9654;</a><br>
+                    <span id="t_recpic5"><br><br></span>
+                    <li><span id="t_rec5"></span></li><a id = "pt5" class = "play">&#9654;</a><br><br>
+                </div>
+                <div class = "rec2">
+                    <span id="t_recpic6"></span>
+                    <li><span id="t_rec6"></span></li><a id = "pt6" class = "play">&#9654;</a><br>
+                    <span id="t_recpic7"><br><br></span>
+                    <li><span id="t_rec7"></span></li><a id = "pt7" class = "play">&#9654;</a><br>
+                    <span id="t_recpic8"><br><br></span>
+                    <li><span id="t_rec8"></span></li><a id = "pt8" class = "play">&#9654;</a><br>
+                    <span id="t_recpic9"><br><br></span>
+                    <li><span id="t_rec9"></span></li><a id = "pt9" class = "play">&#9654;</a><br>
+                    <span id="t_recpic10"><br><br></span>
+                    <li><span id="t_rec10"></span></li><a id = "pt10" class = "play">&#9654;</a><br><br>
+                </div>
+                <div class = "rec3">
+                    <span id="a_recpic1"></span>
+                    <li><span id="a_rec1"></span></li><a id = "pa1" class = "play">&#9654;</a><br>
+                    <span id="a_recpic2"><br><br></span>
+                    <li><span id="a_rec2"></span></li><a id = "pa2" class = "play">&#9654;</a><br>
+                    <span id="a_recpic3"><br><br></span>
+                    <li><span id="a_rec3"></span></li><a id = "pa3" class = "play">&#9654;</a><br>
+                    <span id="a_recpic4"><br><br></span>
+                    <li><span id="a_rec4"></span></li><a id = "pa4" class = "play">&#9654;</a><br>
+                    <span id="a_recpic5"><br><br></span>
+                    <li><span id="a_rec5"></span></li><a id = "pa5" class = "play">&#9654;</a><br><br>
+                </div>
+                <div class = "rec4">
+                    <span id="a_recpic6"></span>
+                    <li><span id="a_rec6"></span></li><a id = "pa6" class = "play">&#9654;</a><br>
+                    <span id="a_recpic7"><br><br></span>
+                    <li><span id="a_rec7"></span></li><a id = "pa7" class = "play">&#9654;</a><br>
+                    <span id="a_recpic8"><br><br></span>
+                    <li><span id="a_rec8"></span></li><a id = "pa8" class = "play">&#9654;</a><br>
+                    <span id="a_recpic9"><br><br></span>
+                    <li><span id="a_rec9"></span></li><a id = "pa9" class = "play">&#9654;</a><br>
+                    <span id="a_recpic10"><br><br></span>
+                    <li><span id="a_rec10"></span></li><a id = "pa10" class = "play">&#9654;</a><br><br>
+                </div>
+        </div>
+        </ol>
+    </body>
+</html>
