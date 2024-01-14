@@ -6,7 +6,7 @@ I have applied for a status upgrade for my app, which would resolve this limitat
 Functionality: 
 Displays Spotify user's top 50 tracks and artists, with adjustable time frames.
 Shows popularity scores for tracks and artists when hovering over pictures.
-Generates new track recommendations using top tracks/artists, with randomized refresh and in-site listening.
+Generates new track recommendations using top tracks/artists, with randomized refreshing and in-site listening.
 
 Project files are all in /callback
 HTML are at the top, Javascript and CSS are in /callback/src.
