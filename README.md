@@ -8,5 +8,5 @@ Displays Spotify user's top 50 tracks and artists, with adjustable time frames.
 Shows popularity scores for tracks and artists when hovering over pictures.
 Generates new track recommendations using top tracks/artists, with randomized refreshing and in-site listening.
 
-All project files are in /callback
+All project files are in /callback.
 HTML are at the top, Javascript and CSS are in /callback/src.
