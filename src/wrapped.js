@@ -25,10 +25,21 @@ if (!code) {
     displayRecsFromTracks(recs_from_tracks);
     displayRecsFromArtists(recs_from_artists);
 
-    const element = document.getElementById("mybutton");
-    element.addEventListener("click", () => refreshRecs(), false);
-    element.addEventListener("click", () => refreshRecsArtists(), false);
+    const refresh = document.getElementById("mybutton");
+    refresh.addEventListener("click", () => refreshRecs(), false);
+    refresh.addEventListener("click", () => refreshRecsArtists(), false);
 
+    const moretracks = document.getElementById("moretracks");
+    moretracks.addEventListener("click", function(){ 
+        localStorage.setItem("mediumtracks", JSON.stringify(tracks)); });
+    //moretracks.addEventListener("click", () => moreTracksShortTerm(), false);
+    //moretracks.addEventListener("click", () => moreTracksLongTerm(), false);
+
+    const moreartists = document.getElementById("moreartists");
+    moreartists.addEventListener("click", function(){ 
+        localStorage.setItem("mediumartists", JSON.stringify(artists)); });
+    //moreartists.addEventListener("click", () => moreArtistsShortTerm(), false);
+    //moreartists.addEventListener("click", () => moreArtistsLongTerm(), false);
 }
 
 async function fetchProfile(token) {
@@ -131,7 +142,7 @@ function displayRecsFromArtists(trackObject) {
             playButton.removeAttribute("title");
         }
         else {
-            playButton.setAttribute("title", "Track not Available");
+            playButton.setAttribute("title", "Track Unavailable");
             playButton.removeAttribute("href");
         }
         playButton.setAttribute("target", "_blank");
@@ -155,6 +166,22 @@ async function refreshRecsArtists() {
     displayRecsFromArtists(await artistRec.json());
     return artistRec;
 }
+
+/*async function moreTracksShortTerm() {
+
+}
+
+async function moreTracksLongTerm() {
+
+}
+
+async function moreArtistsShortTerm() {
+
+}
+
+async function moreArtistsLongTerm() {
+
+}*/
 
 function populateUI(profile) {
     //Update UI with profile data
