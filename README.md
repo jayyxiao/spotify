@@ -1,6 +1,6 @@
 # spotify
 IMPORTANT: Due to the limitations of starter Spotify applications, new users cannot login to my app before I manually register them.
-Please watch the video demo of my app instead.
+Please watch the video demo if I have not registered you.
 I have applied for a status upgrade for my app, which would resolve this limitation if Spotify grants it.
 
 Functionality: 
