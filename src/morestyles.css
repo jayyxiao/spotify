@@ -4,21 +4,41 @@
 }
 
 .heading {
-    margin-left: 10px;
+    margin-left: 25px;
+}
+
+.topmiddle {
+    margin-left: 59.3%;
+    margin-top: 30px;
+}
+
+.timeframe {
+    height: 1%;
+    margin-left: 8px;
+    margin-top: 30px;
 }
 
 li {
     position: absolute;
-    inline-size: 150px;
-    margin-left: 50px;
+    inline-size: 210px;
     overflow-wrap: break-word;
 }
 
-.rec1 > li {
-    margin-left: 10px;
+.rec1 {
+    margin-left: 85px;
+}
+
+.rec2 {
+    margin-left: 150px;
 }
 
 .play {
+    position: absolute;
     text-decoration: none;
     margin-left: 5px;
+    margin-top: 80px;
+}
+
+html {
+    padding-bottom: 30px;
 }

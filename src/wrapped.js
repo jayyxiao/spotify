@@ -30,16 +30,14 @@ if (!code) {
     refresh.addEventListener("click", () => refreshRecsArtists(), false);
 
     const moretracks = document.getElementById("moretracks");
-    moretracks.addEventListener("click", function(){ 
+    localStorage.setItem("accesstoken", accessToken);
+
+    moretracks.addEventListener("click", function() { 
         localStorage.setItem("mediumtracks", JSON.stringify(tracks)); });
-    //moretracks.addEventListener("click", () => moreTracksShortTerm(), false);
-    //moretracks.addEventListener("click", () => moreTracksLongTerm(), false);
 
     const moreartists = document.getElementById("moreartists");
     moreartists.addEventListener("click", function(){ 
         localStorage.setItem("mediumartists", JSON.stringify(artists)); });
-    //moreartists.addEventListener("click", () => moreArtistsShortTerm(), false);
-    //moreartists.addEventListener("click", () => moreArtistsLongTerm(), false);
 }
 
 async function fetchProfile(token) {
@@ -158,31 +156,6 @@ async function refreshRecs() {
     return trackRec;
 }
 
-async function refreshRecsArtists() {
-    const artistRec =  await fetch("https://api.spotify.com/v1/recommendations?limit=10&seed_artists="+artistSeed, {
-        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
-    });
-
-    displayRecsFromArtists(await artistRec.json());
-    return artistRec;
-}
-
-/*async function moreTracksShortTerm() {
-
-}
-
-async function moreTracksLongTerm() {
-
-}
-
-async function moreArtistsShortTerm() {
-
-}
-
-async function moreArtistsLongTerm() {
-
-}*/
-
 function populateUI(profile) {
     //Update UI with profile data
     document.getElementById("displayName").innerText = profile.display_name;
@@ -192,12 +165,6 @@ function populateUI(profile) {
         document.getElementById("avatar").appendChild(profileImage);
         //document.getElementById("imgUrl").innerText = profile.images[0].url;
     }
-    /*document.getElementById("id").innerText = profile.id;
-    document.getElementById("email").innerText = profile.email;
-    document.getElementById("uri").innerText = profile.uri;
-    document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
-    document.getElementById("url").innerText = profile.href;
-    document.getElementById("url").setAttribute("href", profile.href);*/
 }
 
 

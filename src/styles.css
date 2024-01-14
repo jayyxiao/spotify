@@ -71,3 +71,7 @@ li {
     text-decoration: none;
     margin-left: 5px;
 }
+
+html {
+    padding-bottom: 25px;
+}
