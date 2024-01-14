@@ -105,15 +105,36 @@ function displayRecsFromTracks(trackObject) {
         makeImage(trackObject.tracks[i].album.images, "t_recpic"+(i+1).toString(), 100);
         document.getElementById("t_rec"+(i+1).toString()).innerText = trackObject.tracks[i].name;
         document.getElementById("t_recpic"+(i+1).toString()).children[0].title = trackObject.tracks[i].popularity;
+        let playButton = document.getElementById("pt"+(i+1).toString());
+        if(trackObject.tracks[i].preview_url) {
+            playButton.setAttribute("href", trackObject.tracks[i].preview_url);
+            playButton.removeAttribute("title"); //don't need to check if exists first, no exceptions are thrown
+        }
+        else {
+            playButton.setAttribute("title", "Track not Available");
+            playButton.removeAttribute("href");
+        }
+        playButton.setAttribute("target", "_blank");
     }
 }
 
 function displayRecsFromArtists(trackObject) {
-    //input is still a list of 10 tracks
+    //input is still a list of 10 tracks, just generated from artists seed
     for(let i=0; i<10; i++) {
         makeImage(trackObject.tracks[i].album.images, "a_recpic"+(i+1).toString(), 100);
         document.getElementById("a_rec"+(i+1).toString()).innerText = trackObject.tracks[i].name;
         document.getElementById("a_recpic"+(i+1).toString()).children[0].title = trackObject.tracks[i].popularity;
+
+        let playButton = document.getElementById("pa"+(i+1).toString());
+        if(trackObject.tracks[i].preview_url) {
+            playButton.setAttribute("href", trackObject.tracks[i].preview_url);
+            playButton.removeAttribute("title");
+        }
+        else {
+            playButton.setAttribute("title", "Track not Available");
+            playButton.removeAttribute("href");
+        }
+        playButton.setAttribute("target", "_blank");
     }
 }
 

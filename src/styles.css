@@ -66,3 +66,8 @@ li {
 .rec4 {
     margin-left: 17.5%;
 }
+
+.play {
+    text-decoration: none;
+    margin-left: 5px;
+}
