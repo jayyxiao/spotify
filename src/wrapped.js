@@ -120,7 +120,7 @@ function displayRecsFromTracks(trackObject) {
             playButton.removeAttribute("title"); //don't need to check if exists first, no exceptions are thrown
         }
         else {
-            playButton.setAttribute("title", "Track not Available");
+            playButton.setAttribute("title", "Track Unavailable");
             playButton.removeAttribute("href");
         }
         playButton.setAttribute("target", "_blank");
@@ -148,6 +148,12 @@ function displayRecsFromArtists(trackObject) {
 }
 
 async function refreshRecs() {
+    //timeout button for 3 seconds
+    document.getElementById("mybutton").disabled = true;
+    setTimeout(function(){
+        document.getElementById("mybutton").disabled = false;
+    }, 3000);
+
     const trackRec = await fetch("https://api.spotify.com/v1/recommendations?limit=10&seed_tracks="+trackSeed, {
         method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
     });
@@ -161,7 +167,7 @@ async function refreshRecsArtists() {
         method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
     });
 
-    displayRecsFromTracks(await artistRec.json());
+    displayRecsFromArtists(await artistRec.json());
     return artistRec;
 }
 
@@ -174,7 +180,6 @@ function populateUI(profile) {
         document.getElementById("avatar").appendChild(profileImage);
     }
 }
-
 
 function makeImage(images, name, dimension) {
     if (images[0]) {
