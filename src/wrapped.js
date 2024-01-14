@@ -156,6 +156,15 @@ async function refreshRecs() {
     return trackRec;
 }
 
+async function refreshRecsArtists() {
+    const artistRec = await fetch("https://api.spotify.com/v1/recommendations?limit=10&seed_artists="+artistSeed, {
+        method: "GET", headers: { Authorization: `Bearer ${authorizationToken}` }
+    });
+
+    displayRecsFromTracks(await artistRec.json());
+    return artistRec;
+}
+
 function populateUI(profile) {
     //Update UI with profile data
     document.getElementById("displayName").innerText = profile.display_name;
@@ -163,7 +172,6 @@ function populateUI(profile) {
         const profileImage = new Image(200, 200);
         profileImage.src = profile.images[0].url;
         document.getElementById("avatar").appendChild(profileImage);
-        //document.getElementById("imgUrl").innerText = profile.images[0].url;
     }
 }
 

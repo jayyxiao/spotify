@@ -28,11 +28,14 @@ async function fetchTrackArtist(token, type, time_range, limit, offset) {
 }
 
 function displayArtists(timeframe) {
+    let sum = 0;
     for(let i=0; i<50; i++) {
         makeImage(timeframe.items[i].images, "apic"+(i+1).toString(), 100);
         document.getElementById("artist"+(i+1).toString()).innerText = timeframe.items[i].name;
         document.getElementById("apic"+(i+1).toString()).children[0].title = timeframe.items[i].popularity;
+        sum += timeframe.items[i].popularity;
     }
+    document.getElementById("artistavg").innerText = sum/50;
 }
 
 function makeImage(images, name, dimension) {
