@@ -1,4 +1,4 @@
-import { redirectToAuthCodeFlow, getAccessToken } from "./authorization";
+import { redirectToAuthCodeFlow, getAccessToken } from "./authorization.js";
 
 //const clientId = "c066a667dc484615ab9ba7c050cf944b";
 const clientId = "c0a6db2f18fd48358b8df6e491d342f6";
