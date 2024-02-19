@@ -1,5 +1,5 @@
 # spotify
-Video Demo: [youtube.com/watch?v=6KCeczVR30M]: youtube.com/watch?v=6KCeczVR30M
+Video Demo: <https://youtube.com/watch?v=6KCeczVR30M>
 
 IMPORTANT: Due to the limitations of Spotify applications in development mode, new users cannot login to my app before I manually whitelist them.
 Instead, please watch the video demo of me using it at the Youtube link above.
