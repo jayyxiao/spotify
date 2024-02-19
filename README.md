@@ -1,7 +1,7 @@
 # spotify
 IMPORTANT: Due to the limitations of Spotify applications in development mode, new users cannot login to my app before I manually register them.
 Instead, please watch the video demo of me using it at the youtube link below.
-Since my app is a personal project, I was unable to apply for production mode from Spotify.
+Since my app is a personal project, I was unable to obtain production mode from Spotify.
 
 Functionality: 
 Displays Spotify user's top 50 tracks and artists, with adjustable time frames.
