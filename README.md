@@ -1,12 +1,13 @@
 # spotify
-IMPORTANT: Due to the limitations of starter Spotify applications, new users cannot login to my app before I manually register them.
-Please watch the video demo if I have not registered you.
-I have applied for official review of my app, which would resolve this limitation if Spotify grants it.
+IMPORTANT: Due to the limitations of Spotify applications in development mode, new users cannot login to my app before I manually register them.
+Instead, please watch the video demo of me using it.
+Since my app is a personal project, I was unable to apply for production mode.
 
 Functionality: 
 Displays Spotify user's top 50 tracks and artists, with adjustable time frames.
 Shows popularity scores for tracks and artists when hovering over pictures.
-Generates new track recommendations using top tracks/artists, with randomized refreshing and in-site listening.
+Generates new track recommendations using top tracks/artists, with in-site song listening.
 
 All project files are in /callback.
 HTML are at the top, Javascript and CSS are in /callback/src.
+Video demo is in /video_demo
